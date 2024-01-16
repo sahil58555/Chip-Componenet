@@ -53,11 +53,6 @@ function Chip({
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
 
-    if (inputValue === " ") {
-      handleFocusOnLastElement();
-      return;
-    }
-
     if (focusOnLastElement) {
       setFocusOnLastElement(false);
     }
@@ -89,6 +84,12 @@ function Chip({
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Backspace') {
+      handleFocusOnLastElement();
+    }
+  };
+
   return (
     <div className="chip-container">
       {items.map((item, index) => {
@@ -116,6 +117,7 @@ function Chip({
           onChange={handleInputChange}
           onFocus={() => setShowSuggestions(true)}
           onKeyUpCapture={handleKeyCapture}
+          onKeyDown={handleKeyDown} 
           onBlur={handleBlur}
           ref={inputRef}
         />
