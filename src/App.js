@@ -7,9 +7,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <Chips />;
+      <Chips />
     </>
-  );
+  )
 }
 
 export default App;
