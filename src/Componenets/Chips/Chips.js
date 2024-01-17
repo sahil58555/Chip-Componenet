@@ -76,6 +76,7 @@ function Chips() {
           showSuggestions={showSuggestions}
           selectedIndex={selectedIndex}
           range={range}
+          setSelectedIndex={setSelectedIndex}
         />
       )}
     </div>
